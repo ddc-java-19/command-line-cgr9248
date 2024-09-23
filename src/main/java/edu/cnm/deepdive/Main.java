@@ -7,8 +7,8 @@ public class Main {
       String arg = args[i];
       double c = Double.parseDouble(arg);
       double f = convertC2F(c);
+      System.out.println(f);
     }
-    System.out.println(args.length);
   }
 
   public static double convertC2F(double celsius) {
