@@ -6,7 +6,9 @@ public class Main {
     boolean convertingFromCelsius = true;
     System.out.println("Converting from Celsius");
     TemperatureConverter converter = new TemperatureConverter();
-    for (String arg : args) {
+    int i = 0;
+    while (i < args.length) {
+      String arg = args[i];
       switch (arg.toLowerCase().charAt(0)) {
         case 'c' -> {
           convertingFromCelsius = true;
@@ -23,6 +25,7 @@ public class Main {
           System.out.println(output);
         }
       }
+      i++;
     }
   }
 }
