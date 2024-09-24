@@ -15,12 +15,7 @@ public class Main {
         System.out.println("Switching to convert from Fahrenheit");
       } else {
         double input = Double.parseDouble(arg);
-        double output;
-        if (convertingFromCelsius) {
-          output = convertC2F(input);
-        } else {
-          output = convertF2C(input);
-        }
+        double output = convertingFromCelsius ? convertC2F(input) : convertF2C(input);
         System.out.println(output);
       }
     }
