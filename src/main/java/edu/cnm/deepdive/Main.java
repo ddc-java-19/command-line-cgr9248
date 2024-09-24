@@ -8,20 +8,20 @@ public class Main {
     TemperatureConverter converter = new TemperatureConverter();
     for (String arg : args) {
       switch (arg.toLowerCase().charAt(0)) {
-        case 'c':
+        case 'c' -> {
           convertingFromCelsius = true;
           System.out.println("Switching to convert from Celsius");
-          break;
-        case 'f':
+        }
+        case 'f' -> {
           convertingFromCelsius = false;
           System.out.println("Switching to convert from Fahrenheit");
-          break;
-        default:
+        }
+        default -> {
           double input = Double.parseDouble(arg);
           double output =
               convertingFromCelsius ? converter.convertC2F(input) : converter.convertF2C(input);
           System.out.println(output);
-          break;
+        }
       }
     }
   }
