@@ -4,18 +4,19 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-public class MainTest {
+public class TemperatureConverterTest {
 
   private static final double[] celsiusTemperatures = {-40, 0, 10, 20, 30, 50, 100};
   private static final double [] fahrenheitTemperatures = {-40, 32, 50, 68, 86, 122, 212};
   private static final double TOLERANCE = 0.000_000_000_1;
+  private final TemperatureConverter converter = new TemperatureConverter();
 
   @Test
   void convertC2F() {
     for (int i = 0; i < celsiusTemperatures.length; i++) {
       double celsius = celsiusTemperatures[i];
       double fahrenheit = fahrenheitTemperatures[i];
-      assertEquals(fahrenheit, Main.convertC2F(celsius), TOLERANCE);
+      assertEquals(fahrenheit, converter.convertC2F(celsius), TOLERANCE);
     }
   }
 
@@ -24,7 +25,7 @@ public class MainTest {
     for (int i = 0; i < celsiusTemperatures.length; i++) {
       double celsius = celsiusTemperatures[i];
       double fahrenheit = fahrenheitTemperatures[i];
-      assertEquals(celsius, Main.convertF2C(fahrenheit), TOLERANCE);
+      assertEquals(celsius, converter.convertF2C(fahrenheit), TOLERANCE);
     }
   }
 }
